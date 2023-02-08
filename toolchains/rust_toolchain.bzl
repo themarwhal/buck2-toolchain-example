@@ -1,6 +1,8 @@
 load("@prelude//rust:rust_toolchain.bzl", "RustPlatformInfo", "RustToolchainInfo")
 
-# copy pasta from system_rust_toolchain
+# almost identical to the system_rust_toolchain implementation, with the only
+# the difference being the ability to specify rustc
+
 _DEFAULT_TRIPLE = select({
     "ovr_config//os:linux": select({
         "ovr_config//cpu:arm64": "aarch64-unknown-linux-gnu",

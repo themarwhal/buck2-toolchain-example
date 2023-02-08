@@ -21,7 +21,7 @@ system_python_bootstrap_toolchain(
 )
 
 toolchain_alias(
-   name = "rust_toolchain",
+   name = "rust",
    actual = select({
      "//:bootstrap": ":bootstrap_toolchain",
      "DEFAULT": ":normal_toolchain",
@@ -57,5 +57,16 @@ platform(
   name = "bootstrap_config",
   deps = [],
   constraint_values = [":bootstrap"],
+)
+
+constraint_setting(
+    name = "bootstrap",
+    visibility = ["PUBLIC"],
+)
+
+constraint_value(
+    name = "bootstrap_contraint_value",
+    constraint_setting = ":bootstrap",
+    visibility = ["PUBLIC"],
 )
 ### RUST SETUP ###

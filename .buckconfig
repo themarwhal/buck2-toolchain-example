@@ -11,4 +11,4 @@ fbcode = none
 fbsource = none
 
 [parser]
-target_platform_detector_spec = target:root//...->ovr_config//platforms:default
+target_platform_detector_spec = target:root//...->toolchains//:default_platforms
